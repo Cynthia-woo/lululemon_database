@@ -10,10 +10,10 @@ export class BaseClass extends BaseEntity{
     @UpdateDateColumn()
     updatedAt: Date;
 
-    @Column()
+    @Column({default: true})
     isActive: boolean
 
-    @Column()
+    @Column({default: false})
     isDelete: boolean
 
 }

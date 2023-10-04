@@ -10,6 +10,8 @@
    "entities": [
       "src/entity/**/*.ts"
    ],
+   "seeds": ["src/database/seed/**/*.ts"],
+   "factories": ["src/database/factories/**/*.ts"],
    "migrations": [
       "src/migration/**/*.ts"
    ],

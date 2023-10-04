@@ -3,8 +3,8 @@ import {createConnection} from "typeorm";
 import * as express from "express";
 import * as bodyParser from "body-parser";
 import {Request, Response} from "express";
-import {Routes} from "./routes";
 import {User} from "./entity/User";
+import indexRoutes from "./routes/indexRoutes";
 
 createConnection().then(async connection => {
 
@@ -12,7 +12,7 @@ createConnection().then(async connection => {
     const app = express();
     app.use(bodyParser.json());
 
-    // app.use(indexRoutes)
+    app.use(indexRoutes)
 
 
     // start express server

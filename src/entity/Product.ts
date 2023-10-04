@@ -1,6 +1,6 @@
 import {BaseClass} from "./BaseClass";
 import {Column, Entity, ManyToOne} from "typeorm";
-import {IsDecimal, IsIn, IsInt} from "class-validator";
+import {IsDecimal, IsIn, IsInt, Min} from "class-validator";
 import {User} from "./User";
 
 @Entity('product')
