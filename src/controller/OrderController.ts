@@ -94,9 +94,9 @@ export class OrderController{
 
             // calculate total price3
             let totalPrice = 0;
-            products.map(product => {totalPrice += parseFloat(product.price)})
+            products.map(product => {totalPrice += parseFloat(product.price.split(' CAD')[0].substring(1))})
             const strTotalPrice = totalPrice.toFixed(2).toString()
-            // console.log(strTotalPrice)
+            console.log(strTotalPrice)
 
             // create new order
             const newOrder: Order = await Order.create({

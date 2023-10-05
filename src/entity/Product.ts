@@ -5,9 +5,15 @@ import {User} from "./User";
 
 @Entity('product')
 export class Product extends BaseClass{
-    @Column({type:'decimal',precision:10, scale:2})
-    @IsDecimal()
-    price: string;
+    // @Column({type:'decimal',precision:10, scale:2})
+    // @IsDecimal()
+    // price: string;
+
+    @Column()
+    price:string;
+
+    @Column()
+    productId:string;
 
     @Column()
     des: string;
@@ -25,7 +31,7 @@ export class Product extends BaseClass{
     imageUrl: string
 
     @Column()
-    @IsInt()
+    // @IsInt()
     size: string
 
     @ManyToOne(() => User, user=> user.products)
