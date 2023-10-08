@@ -65,7 +65,7 @@ export class OrderController{
             const products: Product[] = await Promise.all(productIds.map( productId => {
                 return getRepository(Product)
                     .createQueryBuilder('product')
-                    .where('product.id = :productId', {productId})
+                    .where('product.productId = :productId', {productId})
                     .getOne()
             }))
 
@@ -127,7 +127,6 @@ export class OrderController{
             } catch (error) {
                 console.error('ERROR WHEN CREATING ORDER', error);
             }
-
 
         }catch(e){
             return res.status(StatusCode.E500).send({

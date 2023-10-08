@@ -25,7 +25,7 @@ export class ProductController{
             const { productId } = req.params
             const product: Product = await getRepository(Product)
                 .createQueryBuilder('product')
-                .where('product.id = :productId', { productId })
+                .where('product.productId = :productId', { productId })
                 .getOne()
             if (!product) {
                 return res.status(StatusCode.E400).send('PRODUCT NOT FOUND')
@@ -106,7 +106,7 @@ export class ProductController{
 
             const product: Product = await getRepository(Product)
                 .createQueryBuilder('product')
-                .where('product.id = :productId', {productId})
+                .where('product.productId = :productId', {productId})
                 .getOne()
 
             const user = await getRepository(User)

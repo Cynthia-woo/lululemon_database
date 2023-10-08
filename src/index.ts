@@ -79,11 +79,16 @@ createConnection().then(async connection => {
     // await newProduct.save()
 
 
+    const cors = require('cors');
 
     // create express app
     const app = express();
+    const corsOptions = {
+        methods: 'GET,POST,PUT,DELETE',
+    };
     app.use(bodyParser.json());
-
+    // 允许使用所有的 HTTP 请求方法
+    app.use(cors(corsOptions))
     app.use(indexRoutes)
 
 
